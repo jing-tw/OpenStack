@@ -1,7 +1,8 @@
 #!/bin/bash
 
 sudo yum -y update
-sudo yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
+#sudo yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
+sudo yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-liberty/rdo-release-liberty-1.noarch.rpm
 sudo yum install -y openstack-packstack
 sudo yum -y install mongodb-server python-pymongo
 cd /etc;rm -f mongodb.conf; touch -f mongod.conf
