@@ -1,19 +1,5 @@
 #!/bin/bash
 
-valid_ip $1
-if [[ $? -eq 0 ]]
-then
-    ip=$1
-    echo "ip checked ok"
-    ssh -t root@$ip "$(< allinone.sh)"
-    echo "ip checked ok"
-else
-    echo "Error:  Invalid IP address: $1"
-    echo "Usage: . ./deploy_allinone.sh IPv4 address"
-fi
-
-   
-
 # Test an IP address for validity:
 # Usage:
 #      valid_ip IP_ADDRESS
@@ -38,4 +24,14 @@ function valid_ip()
     return $stat
 }
 
-
+valid_ip $1
+if [[ $? -eq 0 ]]
+then
+    ip=$1
+    echo "ip checked ok"
+    ssh -t root@$ip "$(< allinone.sh)"
+    echo "ip checked ok"
+else
+    echo "Error:  Invalid IP address: $1"
+    echo "Usage: . ./deploy_allinone.sh IPv4 address"
+fi
