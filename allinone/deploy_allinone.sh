@@ -24,6 +24,26 @@ function valid_ip()
     return $stat
 }
 
+function timer()
+{
+    if [[ $# -eq 0 ]]; then
+        echo $(date '+%s')
+    else
+        local  stime=$1
+        etime=$(date '+%s')
+
+        if [[ -z "$stime" ]]; then stime=$etime; fi
+
+        dt=$((etime - stime))
+        ds=$((dt % 60))
+        dm=$(((dt / 60) % 60))
+        dh=$((dt / 3600))
+        printf '%d:%02d:%02d' $dh $dm $ds
+    fi
+}
+
+tmr=$(timer)
+
 valid_ip $1
 if [[ $? -eq 0 ]]
 then
@@ -35,3 +55,6 @@ else
     echo "Error:  Invalid IP address: $1"
     echo "Usage: . ./deploy_allinone.sh IPv4 address"
 fi
+
+echo "Elapsed time:$(timer $tmr)"
+
