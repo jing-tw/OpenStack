@@ -28,7 +28,7 @@ sudo packstack --answer-file=${answer_file}
 
 # [fix issue] Issue: Bug 1119920 - http://ip/dashboard 404 from all-in-one rdo install on rhel7
 
-echo "=== Fixing Issue http://ip/dashboard 404"
+echo "=== Fixing Issue 1119920 http://ip/dashboard 404 error"
 target_file=/etc/httpd/conf.d/15-horizon_vhost.conf
 patten="ServerAlias localhost"
 new_string="    ServerAlias *"
