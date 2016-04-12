@@ -9,3 +9,7 @@ cd;OpenStack
 
 // Deploy all-in-one openstack
 deploy_allinone.sh <ip>
+
+
+More detail:
+Google doc: https://docs.google.com/document/d/1WWYngMsnP2sF-uKENHjuixn2VnjshSECzlu8jcumjJc/edit?usp=sharing
