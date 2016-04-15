@@ -3,7 +3,9 @@
 sudo yum -y update
 #sudo yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
 #sudo yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-liberty/rdo-release-liberty-1.noarch.rpm
-sudo yum install -y  https://repos.fedorapeople.org/repos/openstack/openstack-mitaka/rdo-release-mitaka-1.noarch.rpm
+#sudo yum install -y  https://repos.fedorapeople.org/repos/openstack/openstack-mitaka/rdo-release-mitaka-1.noarch.rpm
+OpenStack_RPM_File=https://repos.fedorapeople.org/repos/openstack/openstack-mitaka/rdo-release-mitaka-1.noarch.rpm
+sudo yum install -y ${OpenStack_RPM_File}
 sudo yum install -y openstack-packstack
 
 # start fixed mongodb server not found issue
