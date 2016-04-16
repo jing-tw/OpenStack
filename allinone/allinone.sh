@@ -15,9 +15,22 @@ sudo ln -s /etc/mongod.conf mongodb.conf
 
 # update the answerAIO txt
 answer_file=answerAIO.txt
-patten=CONFIG_KEYSTONE_SERVICE_NAME
 cd; packstack --gen-answer-file ${answer_file} 
+
+patten=CONFIG_KEYSTONE_SERVICE_NAME
 sudo sed -i "s#^.*\b${patten}\b.*\$#${patten}=httpd#g" ${answer_file}
+
+# new option
+#patten=CONFIG_MANILA_INSTALL
+#sudo sed -i "s#^.*\b${patten}\b.*\$#${patten}=y#g" ${answer_file}
+
+#patten=CONFIG_HEAT_INSTALL
+#sudo sed -i "s#^.*\b${patten}\b.*\$#${patten}=y#g" ${answer_file}
+
+patten=CONFIG_KEYSTONE_ADMIN_PW
+sudo sed -i "s#^.*\b${patten}\b.*\$#${patten}=admin#g" ${answer_file}
+
+
 
 # run
 echo "run: packstack --answer-file=./answerAIO.txt"
