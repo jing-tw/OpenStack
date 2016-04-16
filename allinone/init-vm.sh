@@ -1,14 +1,14 @@
 #!/bin/bash
 
 iso_file=~/test/allinone/CentOS-7-x86_64-Everything-1511.iso
-vm_name=os-node1-test
+vm_name=os-node1-test-$(date +"%Y%m%d_%H%M%S")
 manager=vboxmanage   #VBoxManage
-storage_size=10240   #10GB
-bridge_nic=eth0 #wlan0
+storage_size=204800  #200GB #10240   #10GB
+bridge_nic=wlan0 #eth0 #wlan0
 
-# Create vm with memory 4096, nic1: nat, nic2: hostonly, vboxnet1s, nic3: bridged to wlan0
+# Create vm with memory 4096, nic1: bridge , nic2: hostonly
 ${manager} createvm --name ${vm_name} --ostype RedHat_64 --register
-${manager}  modifyvm ${vm_name} --memory 4096 --nic1 nat --nic2 hostonly --hostonlyadapter2 vboxnet1 --nic3 bridged --bridgeadapter3 ${bridge_nic}
+${manager}  modifyvm ${vm_name} --memory 4096 --nic1 bridged --bridgeadapter1 ${bridge_nic} --nic2 hostonly --hostonlyadapter2 vboxnet1 
 
 # Setup cdrom and mount the iso
 ${manager}  storagectl ${vm_name} --name "IDE Controller" --add ide --controller PIIX4 --hostiocache on --bootable on
