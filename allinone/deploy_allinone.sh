@@ -44,15 +44,14 @@ function timer()
 
 tmr=$(timer)
 
-valid_ip $1
+strIP=$1
+valid_ip $strIP
 if [[ $? -eq 0 ]]
 then
-    ip=$1
     echo "ip checked ok"
-    ssh -t root@$ip "$(< allinone.sh)"
-    echo "ip checked ok"
+    ssh -t root@$strIP "$(< allinone.sh)"
 else
-    echo "Error:  Invalid IP address: $1"
+    echo "Error:  Invalid IP address: $strIP"
     echo "Usage: . ./deploy_allinone.sh IPv4 address"
 fi
 

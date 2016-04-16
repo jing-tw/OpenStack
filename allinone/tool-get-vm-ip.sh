@@ -6,8 +6,8 @@ IPArray=($(vboxmanage list runningvms | sed -r 's/.*\{(.*)\}/\1/' | xargs -L1 -I
 
 for (( i=0; i<${#HostNameArray[@]}; i++)); do
    echo "${HostNameArray[i]} => ${IPArray[i]} "
+   echo "==>  . ./deploy_allinone.sh ${IPArray[i]}"
    if [ -z "${IPArray[i]}" ]; then
-    echo "Did you install VirutalBox Guest Additional Package?"
+    echo "No running VM or no VirutalBox Guest Additional Package installed."
    fi
-
 done
