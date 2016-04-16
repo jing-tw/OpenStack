@@ -1,20 +1,19 @@
-### A: (OpenStack Only) Install OpenStack on VM ###
-deploy_allinone.sh <ip>
-
-
-### B: (All in One) 1. create vm  2. install openstack ###
+# pull the code
 git clone https://github.com/jing-tw/OpenStack.git
 git checkout --orphan allinone
 
-// Install CentOS
-cd;OpenStack
-. ./init.sh
-<Minimal Installation of CentOS>
-<get ip>
+== Scenario A: Deploy OpenStack on a existed VM ==
+tool-get-vm-ip.sh          # get the target vm instance ip
+deploy_allinone.sh <ip>    # deploy OpenStack to the vm
 
-// Deploy all-in-one openstack
-deploy_allinone.sh <ip>
-
+== Scenario B: Auto-Create VM + Deploy OpenStack on that VM ==
+# create and install general centos vm
+cd OpenStack
+. ./init-vm.sh     # create a empty vm (nic0: bridge + nic1: host-only, 200GB
+                   # install OS
+# deploy OpenStack
+tool-get-vm-ip.sh          # get the target vm instance ip
+deploy_allinone.sh <ip>    # deploy OpenStack to the vm
 
 
 
