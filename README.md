@@ -1,4 +1,9 @@
 # OpenStack
+## pull the code
+- git clone https://github.com/jing-tw/OpenStack.git
+- cd OpenStack
+- git checkout allinone
+
 ## vagrant version
 - vagrant init centos/7
 - . ./vagrant_sh.sh
@@ -6,9 +11,6 @@
 
 
 ## vboxmanage + pure bash version
-- git clone https://github.com/jing-tw/OpenStack.git
-- git checkout --orphan allinone
-
 == Scenario A: Deploy OpenStack on a existed VM ==
 - tool-get-vm-ip.sh          # get the target vm instance ip
 - deploy_allinone.sh <ip>    # deploy OpenStack to the vm
