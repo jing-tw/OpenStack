@@ -1,3 +1,13 @@
+vagrant version
+# create environment
+vagrant init centos/7
+
+# start deployment
+. ./vagrant_sh.sh
+
+
+
+vboxmanage + pure bash version
 # pull the code
 git clone https://github.com/jing-tw/OpenStack.git
 git checkout --orphan allinone

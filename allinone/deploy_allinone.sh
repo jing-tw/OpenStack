@@ -49,7 +49,9 @@ valid_ip $strIP
 if [[ $? -eq 0 ]]
 then
     echo "ip checked ok"
-    ssh -t root@$strIP "$(< allinone.sh)"
+    #ssh -t root@$strIP "$(< allinone.sh)"
+    defalut_gateway_subnet=`ip r | grep default | cut -d ' ' -f 3|awk -F '[.]' '{printf "%s.%s.%s.\n",$1,$2,$3}'`
+    ssh root@$strIP "bash -s" -- < ./allinone.sh "$defalut_gateway_subnet"
 else
     echo "Error:  Invalid IP address: $strIP"
     echo "Usage: . ./deploy_allinone.sh IPv4 address"
