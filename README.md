@@ -14,6 +14,11 @@ git checkout allinone
 vagrant init centos/7
 . ./vagrant_sh.sh
 ```
+### Verification (OpenStack Client)
+ssh (Control Node}
+sudo su  # as root
+. ./keystonerc_admin
+nova image-list
 
 ### Detail
 Google doc: https://docs.google.com/document/d/1WWYngMsnP2sF-uKENHjuixn2VnjshSECzlu8jcumjJc/edit?usp=sharing
