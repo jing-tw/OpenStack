@@ -32,10 +32,12 @@ cd OpenStack
 deploy_allinone.sh <ip>    # deploy OpenStack to the vm
 ```
 ### Verification (OpenStack Client)
+```bash
 ssh (Control Node}
 sudo su  # as root
 . ./keystonerc_admin
 nova image-list
+```
 
 ## Detail:
 Google doc: https://docs.google.com/document/d/1WWYngMsnP2sF-uKENHjuixn2VnjshSECzlu8jcumjJc/edit?usp=sharing
