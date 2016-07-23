@@ -1,11 +1,8 @@
 #!/bin/bash
 
-#https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
-#https://repos.fedorapeople.org/repos/openstack/openstack-liberty/rdo-release-	liberty-1.noarch.rpm
-#https://repos.fedorapeople.org/repos/openstack/openstack-mitaka/rdo-release-mitaka-1.noarch.rpm
 function fun_install_package(){
 
-	OpenStack_RPM_File=https://repos.fedorapeople.org/repos/openstack/openstack-mitaka/rdo-release-mitaka-1.noarch.rpm
+	OpenStack_RPM_File=https://repos.fedorapeople.org/repos/openstack/openstack-mitaka/rdo-release-mitaka-5.noarch.rpm
 
 	yum -y update
 	yum install -y ${OpenStack_RPM_File}
