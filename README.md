@@ -1,4 +1,8 @@
 # OpenStack
+
+## Note
+Please check the Openstack version that you want to install for the variable OpenStack_RPM_File in allinone/allinone.sh.
+
 ## pull the code
 ```bash
 git clone https://github.com/jing-tw/OpenStack.git
