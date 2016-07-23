@@ -6,7 +6,8 @@ git clone https://github.com/jing-tw/OpenStack.git
 cd OpenStack
 git checkout allinone
 ```
-### Step 2: Check the Openstack version that you want to install for the variable OpenStack_RPM_File in allinone/allinone.sh.
+### Step 2: OpenStack Version Check
+Check the Openstack version that you want to install for the variable OpenStack_RPM_File in allinone/allinone.sh.
 
 
 ### Step 3: Deploy OpenStack (vagrant version)
