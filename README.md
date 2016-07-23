@@ -1,22 +1,21 @@
-# OpenStack
+# Deploy OpenStack using packstack
 
-## Note
-Please check the Openstack version that you want to install for the variable OpenStack_RPM_File in allinone/allinone.sh.
-
-## pull the code
+## Step 1: Pull the code
 ```bash
 git clone https://github.com/jing-tw/OpenStack.git
 cd OpenStack
 git checkout allinone
 ```
-## vagrant version
+
+## Step 2: Please check the Openstack version that you want to install for the variable OpenStack_RPM_File in allinone/allinone.sh.
+### (a) Deploy OpenStsack using vagrant
 ```bash
 vagrant init centos/7
 . ./vagrant_sh.sh
 ```
 
 
-## vboxmanage + pure bash version
+### (b) vboxmanage + pure bash version
 == Scenario A: Deploy OpenStack on a existed VM ==
 ```bash
 tool-get-vm-ip.sh          # get the target vm instance ip
