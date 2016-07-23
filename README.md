@@ -1,12 +1,15 @@
 # OpenStack 
 ## allinone branch
-### pull the code
+### Step 1: pull the code
 ```bash
 git clone https://github.com/jing-tw/OpenStack.git
 cd OpenStack
 git checkout allinone
 ```
-### vagrant version
+### Step 2: Check the Openstack version that you want to install for the variable OpenStack_RPM_File in allinone/allinone.sh.
+
+
+### Step 3: Deploy OpenStack (vagrant version)
 ```bash
 vagrant init centos/7
 . ./vagrant_sh.sh
