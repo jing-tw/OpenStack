@@ -7,7 +7,8 @@ cd OpenStack
 git checkout allinone
 ```
 
-## Step 2: Please check the Openstack version that you want to install for the variable OpenStack_RPM_File in allinone/allinone.sh.
+## Step 2: OpenStack Version Check
+Please check the Openstack version that you want to install for the variable OpenStack_RPM_File in allinone/allinone.sh.
 ### (a) Deploy OpenStsack using vagrant
 ```bash
 vagrant init centos/7
@@ -30,7 +31,11 @@ cd OpenStack
 . ./tool-get-vm-ip.sh          # get the target vm instance ip
 deploy_allinone.sh <ip>    # deploy OpenStack to the vm
 ```
-
+### Verification (OpenStack Client)
+ssh (Control Node}
+sudo su  # as root
+. ./keystonerc_admin
+nova image-list
 
 ## Detail:
 Google doc: https://docs.google.com/document/d/1WWYngMsnP2sF-uKENHjuixn2VnjshSECzlu8jcumjJc/edit?usp=sharing
